@@ -13,11 +13,11 @@
 // limitations under the License.
 
 package {
-    default_applicable_licenses: ["eigen_license"],
+    default_applicable_licenses: ["eigen3_license"],
 }
 
 license {
-    name: "eigen_license",
+    name: "eigen3_license",
     visibility: [":__subpackages__"],
     license_kinds: [
         // Apache 2.0 is only used in Eigen/src/Core/arch/Default/BFloat16.h,
@@ -39,7 +39,7 @@ license {
 }
 
 license {
-    name: "eigen_bench_license",
+    name: "eigen3_bench_license",
     visibility: ["//visibility:private"],
     license_kinds: [
         "SPDX-license-identifier-Apache-2.0",
@@ -52,7 +52,7 @@ license {
 }
 
 license {
-    name: "eigen_restricted_code_license",
+    name: "eigen3_restricted_code_license",
     visibility: ["//visibility:private"],
     license_kinds: [
         "SPDX-license-identifier-LGPL-2.1",
@@ -61,24 +61,24 @@ license {
 }
 
 filegroup {
-    name: "eigen_bench",
+    name: "eigen3_bench",
     srcs: ["bench/**/*"],
-    licenses: ["eigen_bench_license"],
+    licenses: ["eigen3_bench_license"],
     visibility: ["//visibility:private"],
 }
 
 filegroup {
-    name: "eigen_restricted_code",
+    name: "eigen3_restricted_code",
     srcs: [
         "unsupported/Eigen/src/IterativeSolvers/ConstrainedConjGrad.h",
         "unsupported/Eigen/src/IterativeSolvers/IterationController.h",
     ],
-    licenses: ["eigen_restricted_code_license"],
+    licenses: ["eigen3_restricted_code_license"],
     visibility: ["//visibility:private"],
 }
 
 cc_library_headers {
-    name: "libeigen",
+    name: "libeigen3",
 
     // Although entire directory is exported, only Eigen and unsupported/Eigen
     // contain actual exported headers. When capturing header files for

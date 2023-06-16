@@ -15,14 +15,14 @@
 package {
     // See: http://go/android-license-faq
     // A large-scale-change added 'default_applicable_licenses' to import
-    // all of the 'license_kinds' from "external_eigen_license"
+    // all of the 'license_kinds' from "external_eigen3_license"
     // to get the below license kinds:
     //   SPDX-license-identifier-MPL-2.0
-    default_applicable_licenses: ["eigen_license"],
+    default_applicable_licenses: ["eigen3_license"],
 }
 
 cc_defaults {
-    name: "eigen-defaults",
+    name: "eigen3-defaults",
     srcs: [
         "single.cpp",
         "double.cpp",
@@ -63,9 +63,9 @@ cc_defaults {
 }
 
 cc_library_static {
-    name: "libF77blas",
+    name: "libF77blas-eigen3",
     vendor_available: true,
-    defaults: ["eigen-defaults"],
+    defaults: ["eigen3-defaults"],
     host_supported: true,
     // TODO(b/153609531): remove when no longer needed.
     native_bridge_supported: true,
@@ -73,8 +73,8 @@ cc_library_static {
 
 // Build Eigen using API 9 toolchain for RS Support lib.
 cc_library_static {
-    name: "libF77blasV8",
-    defaults: ["eigen-defaults"],
+    name: "libF77blasV8-eigen3",
+    defaults: ["eigen3-defaults"],
     sdk_version: "9",
     stl: "c++_static",
 }
